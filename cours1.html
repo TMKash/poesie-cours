@@ -148,12 +148,20 @@
     </div>
 </div>
 
-<script>
-function showCorrection(num) {
-    const correction = document.getElementById('corr' + num);
-    correction.style.display = 'block';
-}
-</script>
+ <script>
+        function showCorrection(num) {
+            const input = document.getElementById('reponse' + num);
+            const reponse = input.value.trim().toLowerCase();
+            const correction = document.getElementById('corr' + num).textContent.trim().toLowerCase();
+
+            if (reponse === correction) {
+                alert('✅ Correct !');
+            } else {
+                document.getElementById('corr' + num).style.display = 'block';
+                alert('❌ Incorrect. La bonne réponse est affichée.');
+            }
+        }
+    </script>
 
 </body>
 </html>
