@@ -14,6 +14,7 @@
             padding: 20px; 
             border-radius: 10px; 
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
         }
         .highlight {
             background-color: #f0f0f0; 
@@ -41,6 +42,7 @@
             border: none; 
             border-radius: 5px; 
             transition: background 0.3s ease;
+            cursor: pointer;
         }
         button:hover {
             background-color: #555;
@@ -56,10 +58,17 @@
             border-radius: 5px; 
             display: none;
         }
+        .correction {
+            font-weight: bold;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 
+<!-- =========================
+     COURS PRINCIPAL
+     ========================= -->
 <div class="fiche">
     <!-- En-tête du cours -->
     <h2>🎵 Carmina Burana : Rythmes Urbains - cours 1</h2>
@@ -94,208 +103,184 @@
     </div>
 </div>
 
-<!-- Exercices de Grammaire -->
+<!-- =========================
+     EXERCICES DE GRAMMAIRE
+     ========================= -->
 <div class="fiche">
     <h3>🔍 15 Exercices de Grammaire</h3>
-     <p><strong>Avant de commencer, un rappel : </strong></p>
-    <p>écrire → écrit <br>
-revenir → revenu <br>
-écouter → écouté <br>
-voler → volé <br>
-rester → resté <br>
-saisir → saisi <br>
-devenir → devenu <br>
-chanter → chanté <br>
-se mêler → mêlé <br>
-voir → vu <br>
-arriver → arrivé <br>
-applaudir → applaudi <br>
-s’ouvrir → ouvert <br>
-avoir → eu <br>
-apprécier → apprécié</p>   
- <!-- Exercice 1 -->
-  <div class="exercice-block">
-    <p>1. "Jacques Prévert ____ (écrire) ce poème pour Carl Orff."
-      <input type="text" id="reponse1">
-    </p>
-    <button onclick="showCorrection(1, 'Avoir - pas d’accord.')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr1" style="display:none;">a écrit</div>
-    <div class="explication" id="exp1"></div>
-  </div>
+    <p><strong>Avant de commencer, un rappel : </strong></p>
+    <p>
+        écrire → écrit <br>
+        revenir → revenu <br>
+        écouter → écouté <br>
+        voler → volé <br>
+        rester → resté <br>
+        saisir → saisi <br>
+        devenir → devenu <br>
+        chanter → chanté <br>
+        se mêler → mêlé <br>
+        voir → vu <br>
+        arriver → arrivé <br>
+        applaudir → applaudi <br>
+        s’ouvrir → ouvert <br>
+        avoir → eu <br>
+        apprécier → apprécié
+    </p>   
 
-  <!-- Exercice 2 -->
-  <div class="exercice-block">
-    <p>2. "Les musiciens ____ (revenir) sur scène pour jouer Carmina Burana."
-      <input type="text" id="reponse2">
-    </p>
-    <button onclick="showCorrection(2, 'Être - accord (pluriel).')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr2" style="display:none;">sont revenus</div>
-    <div class="explication" id="exp2"></div>
-  </div>
+    <!-- Exercice 1 -->
+    <div class="exercice-block">
+      <p>1. "Jacques Prévert ____ (écrire) ce poème pour Carl Orff."
+        <input type="text" id="reponse1">
+      </p>
+      <button onclick="showCorrection(1, 'Avoir - pas d’accord.')">Vérifier</button>
+      <div class="correction" id="corr1" style="display:none;">a écrit</div>
+      <div class="explication" id="exp1"></div>
+    </div>
 
-  <!-- Exercice 3 -->
-  <div class="exercice-block">
-    <p>3. "Nous ____ (écouter) la musique qui voyage selon Prévert."
-      <input type="text" id="reponse3">
-    </p>
-    <button onclick="showCorrection(3, 'Avoir - pas d’accord.')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr3" style="display:none;">avons écouté</div>
-    <div class="explication" id="exp3"></div>
-  </div>
+    <!-- Exercice 2 -->
+    <div class="exercice-block">
+      <p>2. "Les musiciens ____ (revenir) sur scène pour jouer Carmina Burana."
+        <input type="text" id="reponse2">
+      </p>
+      <button onclick="showCorrection(2, 'Être - accord (pluriel).')">Vérifier</button>
+      <div class="correction" id="corr2" style="display:none;">sont revenus</div>
+      <div class="explication" id="exp2"></div>
+    </div>
 
-  <!-- Exercice 4 -->
-  <div class="exercice-block">
-    <p>4. "Les feuilles du poème ____ (voler) au vent."
-      <input type="text" id="reponse4">
-    </p>
-    <button onclick="showCorrection(4, 'Avoir - pas d’accord.')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr4" style="display:none;">ont volé</div>
-    <div class="explication" id="exp4"></div>
-  </div>
+    <!-- Exercice 3 -->
+    <div class="exercice-block">
+      <p>3. "Nous ____ (écouter) la musique qui voyage selon Prévert."
+        <input type="text" id="reponse3">
+      </p>
+      <button onclick="showCorrection(3, 'Avoir - pas d’accord.')">Vérifier</button>
+      <div class="correction" id="corr3" style="display:none;">avons écouté</div>
+      <div class="explication" id="exp3"></div>
+    </div>
 
-  <!-- Exercice 5 -->
-  <div class="exercice-block">
-    <p>5. "La musique ____ (rester) inécoutée pendant un instant."
-      <input type="text" id="reponse5">
-    </p>
-    <button onclick="showCorrection(5, 'Être - accord (féminin sg).')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr5" style="display:none;">est restée</div>
-    <div class="explication" id="exp5"></div>
-  </div>
+    <!-- Exercice 4 -->
+    <div class="exercice-block">
+      <p>4. "Les feuilles du poème ____ (voler) au vent."
+        <input type="text" id="reponse4">
+      </p>
+      <button onclick="showCorrection(4, 'Avoir - pas d’accord.')">Vérifier</button>
+      <div class="correction" id="corr4" style="display:none;">ont volé</div>
+      <div class="explication" id="exp4"></div>
+    </div>
 
-  <!-- Exercice 6 -->
-  <div class="exercice-block">
-    <p>6. "Vous ____ (saisir) l’instant où la musique part et revient."
-      <input type="text" id="reponse6">
-    </p>
-    <button onclick="showCorrection(6, 'Avoir - pas d’accord.')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr6" style="display:none;">avez saisi</div>
-    <div class="explication" id="exp6"></div>
-  </div>
+    <!-- Exercice 5 -->
+    <div class="exercice-block">
+      <p>5. "La musique ____ (rester) inécoutée pendant un instant."
+        <input type="text" id="reponse5">
+      </p>
+      <button onclick="showCorrection(5, 'Être - accord (féminin sg).')">Vérifier</button>
+      <div class="correction" id="corr5" style="display:none;">est restée</div>
+      <div class="explication" id="exp5"></div>
+    </div>
 
-  <!-- Exercice 7 -->
-  <div class="exercice-block">
-    <p>7. "Elle ____ (devenir) célèbre grâce à ce poème."
-      <input type="text" id="reponse7">
-    </p>
-    <button onclick="showCorrection(7, 'Être - accord (féminin sg).')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr7" style="display:none;">est devenue</div>
-    <div class="explication" id="exp7"></div>
-  </div>
+    <!-- Exercice 6 -->
+    <div class="exercice-block">
+      <p>6. "Vous ____ (saisir) l’instant où la musique part et revient."
+        <input type="text" id="reponse6">
+      </p>
+      <button onclick="showCorrection(6, 'Avoir - pas d’accord.')">Vérifier</button>
+      <div class="correction" id="corr6" style="display:none;">avez saisi</div>
+      <div class="explication" id="exp6"></div>
+    </div>
 
-  <!-- Exercice 8 -->
-  <div class="exercice-block">
-    <p>8. "Ils ____ (chanter) les couplets en latin turbulent."
-      <input type="text" id="reponse8">
-    </p>
-    <button onclick="showCorrection(8, 'Avoir - pas d’accord.')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr8" style="display:none;">ont chanté</div>
-    <div class="explication" id="exp8"></div>
-  </div>
+    <!-- Exercice 7 -->
+    <div class="exercice-block">
+      <p>7. "Elle ____ (devenir) célèbre grâce à ce poème."
+        <input type="text" id="reponse7">
+      </p>
+      <button onclick="showCorrection(7, 'Être - accord (féminin sg).')">Vérifier</button>
+      <div class="correction" id="corr7" style="display:none;">est devenue</div>
+      <div class="explication" id="exp7"></div>
+    </div>
 
-  <!-- Exercice 9 -->
-  <div class="exercice-block">
-    <p>9. "Les voix ____ (se mêler) aux violons."
-      <input type="text" id="reponse9">
-    </p>
-    <button onclick="showCorrection(9, 'Verbe pronominal + être - accord (féminin pl).')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr9" style="display:none;">se sont mêlées</div>
-    <div class="explication" id="exp9"></div>
-  </div>
+    <!-- Exercice 8 -->
+    <div class="exercice-block">
+      <p>8. "Ils ____ (chanter) les couplets en latin turbulent."
+        <input type="text" id="reponse8">
+      </p>
+      <button onclick="showCorrection(8, 'Avoir - pas d’accord.')">Vérifier</button>
+      <div class="correction" id="corr8" style="display:none;">ont chanté</div>
+      <div class="explication" id="exp8"></div>
+    </div>
 
-  <!-- Exercice 10 -->
-  <div class="exercice-block">
-    <p>10. "Les passants ____ (voir) les feuilles du poème arrachées par le vent."
-      <input type="text" id="reponse10">
-    </p>
-    <button onclick="showCorrection(10, 'Avoir - pas d’accord.')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr10" style="display:none;">ont vu</div>
-    <div class="explication" id="exp10"></div>
-  </div>
+    <!-- Exercice 9 -->
+    <div class="exercice-block">
+      <p>9. "Les voix ____ (se mêler) aux violons."
+        <input type="text" id="reponse9">
+      </p>
+      <button onclick="showCorrection(9, 'Verbe pronominal + être - accord (féminin pl).')">Vérifier</button>
+      <div class="correction" id="corr9" style="display:none;">se sont mêlées</div>
+      <div class="explication" id="exp9"></div>
+    </div>
 
-  <!-- Exercice 11 -->
-  <div class="exercice-block">
-    <p>11. "Nous ____ (arriver) à l’abbaye de Benediktbeuren."
-      <input type="text" id="reponse11">
-    </p>
-    <button onclick="showCorrection(11, 'Être - accord (pl).')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr11" style="display:none;">sommes arrivés</div>
-    <div class="explication" id="exp11"></div>
-  </div>
+    <!-- Exercice 10 -->
+    <div class="exercice-block">
+      <p>10. "Les passants ____ (voir) les feuilles du poème arrachées par le vent."
+        <input type="text" id="reponse10">
+      </p>
+      <button onclick="showCorrection(10, 'Avoir - pas d’accord.')">Vérifier</button>
+      <div class="correction" id="corr10" style="display:none;">ont vu</div>
+      <div class="explication" id="exp10"></div>
+    </div>
 
-  <!-- Exercice 12 -->
-  <div class="exercice-block">
-    <p>12. "Vous ____ (applaudir) ce grand air de l’amour."
-      <input type="text" id="reponse12">
-    </p>
-    <button onclick="showCorrection(12, 'Avoir - pas d’accord.')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr12" style="display:none;">avez applaudi</div>
-    <div class="explication" id="exp12"></div>
-  </div>
+    <!-- Exercice 11 -->
+    <div class="exercice-block">
+      <p>11. "Nous ____ (arriver) à l’abbaye de Benediktbeuren."
+        <input type="text" id="reponse11">
+      </p>
+      <button onclick="showCorrection(11, 'Être - accord (pl).')">Vérifier</button>
+      <div class="correction" id="corr11" style="display:none;">sommes arrivés</div>
+      <div class="explication" id="exp11"></div>
+    </div>
 
-  <!-- Exercice 13 -->
-  <div class="exercice-block">
-    <p>13. "Les rideaux de l’opéra ____ (s’ouvrir) devant la foule."
-      <input type="text" id="reponse13">
-    </p>
-    <button onclick="showCorrection(13, 'Verbe pronominal + être - accord (masc. pl).')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr13" style="display:none;">se sont ouverts</div>
-    <div class="explication" id="exp13"></div>
-  </div>
+    <!-- Exercice 12 -->
+    <div class="exercice-block">
+      <p>12. "Vous ____ (applaudir) ce grand air de l’amour."
+        <input type="text" id="reponse12">
+      </p>
+      <button onclick="showCorrection(12, 'Avoir - pas d’accord.')">Vérifier</button>
+      <div class="correction" id="corr12" style="display:none;">avez applaudi</div>
+      <div class="explication" id="exp12"></div>
+    </div>
 
-  <!-- Exercice 14 -->
-  <div class="exercice-block">
-    <p>14. "J’ ____ (avoir) l’impression de voyager au fil du temps."
-      <input type="text" id="reponse14">
-    </p>
-    <button onclick="showCorrection(14, 'Avoir - pas d’accord.')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr14" style="display:none;">ai eu</div>
-    <div class="explication" id="exp14"></div>
-  </div>
+    <!-- Exercice 13 -->
+    <div class="exercice-block">
+      <p>13. "Les rideaux de l’opéra ____ (s’ouvrir) devant la foule."
+        <input type="text" id="reponse13">
+      </p>
+      <button onclick="showCorrection(13, 'Verbe pronominal + être - accord (masc. pl).')">Vérifier</button>
+      <div class="correction" id="corr13" style="display:none;">se sont ouverts</div>
+      <div class="explication" id="exp13"></div>
+    </div>
 
-  <!-- Exercice 15 -->
-  <div class="exercice-block">
-    <p>15. "Les spectateurs ____ (apprécier) la beauté de Carmina Burana."
-      <input type="text" id="reponse15">
-    </p>
-    <button onclick="showCorrection(15, 'Avoir - pas d’accord.')">
-      Vérifier
-    </button>
-    <div class="correction" id="corr15" style="display:none;">ont apprécié</div>
-    <div class="explication" id="exp15"></div>
-  </div>
+    <!-- Exercice 14 -->
+    <div class="exercice-block">
+      <p>14. "J’ ____ (avoir) l’impression de voyager au fil du temps."
+        <input type="text" id="reponse14">
+      </p>
+      <button onclick="showCorrection(14, 'Avoir - pas d’accord.')">Vérifier</button>
+      <div class="correction" id="corr14" style="display:none;">ai eu</div>
+      <div class="explication" id="exp14"></div>
+    </div>
 
+    <!-- Exercice 15 -->
+    <div class="exercice-block">
+      <p>15. "Les spectateurs ____ (apprécier) la beauté de Carmina Burana."
+        <input type="text" id="reponse15">
+      </p>
+      <button onclick="showCorrection(15, 'Avoir - pas d’accord.')">Vérifier</button>
+      <div class="correction" id="corr15" style="display:none;">ont apprécié</div>
+      <div class="explication" id="exp15"></div>
+    </div>
 </div>
 
-<!-- Exercices d'Orthographe -->
+<!-- =========================
+     EXERCICES D'ORTHOGRAPHE
+     ========================= -->
 <div class="fiche">
     <h3>✏️ 15 Exercices d'Orthographe</h3>
 
@@ -310,398 +295,400 @@ apprécier → apprécié</p>
         <div class="explication" id="exp16"></div> 
     </div>
 
-<div class="exercice-block">
-  <p>2. Compléter : "Il a ____ (chanter) la partition de Carmina Burana."
-  <input type="text" id="reponse17">
-      </p>
-  <button onclick="showCorrection(17, 'Test de remplacement : Il a pris. Donc Il a chanté - au participe passé.')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr17" style="display:none;">chanté</div>
-  <div class="explication" id="exp17"></div>
+    <div class="exercice-block">
+      <p>2. Compléter : "Il a ____ (chanter) la partition de Carmina Burana."
+      <input type="text" id="reponse17">
+          </p>
+      <button onclick="showCorrection(17, 'Test de remplacement : Il a pris. Donc Il a chanté - au participe passé.')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr17" style="display:none;">chanté</div>
+      <div class="explication" id="exp17"></div>
+    </div>
+
+    <div class="exercice-block">
+      <p>3. Compléter : "Elle va ____ (rejouer) cette mélodie dans la chorale."
+      <input type="text" id="reponse18">
+          </p>
+      <button onclick="showCorrection(18, 'Test de remplacement : Elle va prendre. Donc Elle va rejouer - au verbe infinitif.')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr18" style="display:none;">rejouer</div>
+      <div class="explication" id="exp18"></div>
+    </div>
+
+    <div class="exercice-block">
+      <p>4. Compléter : "Les musiciens ont ____ (accorder) leurs instruments."
+      <input type="text" id="reponse19">
+          </p>
+      <button onclick="showCorrection(19, 'Test de remplacement : Les musiciens ont pris. Donc ont accordé - au participe passé.')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr19" style="display:none;">accordé</div>
+      <div class="explication" id="exp19"></div>
+    </div>
+
+    <div class="exercice-block">
+      <p>5. Compléter : "Nous allons ____ (prolonger) le final pour impressionner le public."
+      <input type="text" id="reponse20">
+          </p>
+      <button onclick="showCorrection(20, 'Test de remplacement : Nous allons prendre. Donc allons prolonger - à l’infinitif.')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr20" style="display:none;">prolonger</div>
+      <div class="explication" id="exp20"></div>
+    </div>
+
+    <div class="exercice-block">
+      <p>6. Compléter : "Le chœur a ____ (débuter) la scène sur un rythme endiablé."
+      <input type="text" id="reponse21">
+          </p>
+      <button onclick="showCorrection(21, 'Test : Le chœur a pris. Donc a débuté - participe passé.')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr21" style="display:none;">débuté</div>
+      <div class="explication" id="exp21"></div>
+    </div>
+
+    <div class="exercice-block">
+      <p>7. Compléter : "Le public va ____ (crier) encore plus fort."
+      <input type="text" id="reponse22">
+          </p>
+      <button onclick="showCorrection(22, 'Test : Le public va prendre. Donc va crier - infinitif.')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr22" style="display:none;">crier</div>
+      <div class="explication" id="exp22"></div>
+    </div>
+
+    <div class="exercice-block">
+      <p>8. Compléter : "Ils ont ____ (réciter) un passage inspiré de Prévert."
+      <input type="text" id="reponse23">
+          </p>
+      <button onclick="showCorrection(23, 'Test : Ils ont pris. Donc ont récité - participe passé.')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr23" style="display:none;">récité</div>
+      <div class="explication" id="exp23"></div>
+    </div>
+
+    <div class="exercice-block">
+      <p>9. Compléter : "Le poème va ____ (envoûter) toute la salle."
+      <input type="text" id="reponse24">
+          </p>
+      <button onclick="showCorrection(24, 'Test : Le poème va prendre. Donc va envoûter - infinitif.')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr24" style="display:none;">envoûter</div>
+      <div class="explication" id="exp24"></div>
+    </div>
+
+    <div class="exercice-block">
+      <p>10. Compléter : "Nous avons ____ (répéter) la scène jusqu’à la perfection."
+      <input type="text" id="reponse25">
+          </p>
+      <button onclick="showCorrection(25, 'Test : Nous avons pris. Donc avons répété - participe passé.')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr25" style="display:none;">répété</div>
+      <div class="explication" id="exp25"></div>
+    </div>
+
+    <div class="exercice-block">
+      <p>11. Compléter : "Elles vont ____ (préparer) le décor avant l’entracte."
+      <input type="text" id="reponse26">
+          </p>
+      <button onclick="showCorrection(26, 'Test : Elles vont prendre. Donc vont préparer - infinitif.')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr26" style="display:none;">préparer</div>
+      <div class="explication" id="exp26"></div>
+    </div>
+
+    <div class="exercice-block">
+      <p>12. Compléter : "Le soliste a ____ (interpréter) ce morceau avec ferveur."
+      <input type="text" id="reponse27">
+          </p>
+      <button onclick="showCorrection(27, 'Test : Le soliste a pris. Donc a interprété - participe passé.')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr27" style="display:none;">interprété</div>
+      <div class="explication" id="exp27"></div>
+    </div>
+
+    <div class="exercice-block">
+      <p>13. Compléter : "Tu vas ____ (ajouter) une strophe inédite de Prévert."
+      <input type="text" id="reponse28">
+          </p>
+      <button onclick="showCorrection(28, 'Test : Tu vas prendre. Donc vas ajouter - infinitif.')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr28" style="display:none;">ajouter</div>
+      <div class="explication" id="exp28"></div>
+    </div>
+
+    <div class="exercice-block">
+      <p>14. Compléter : "Ils ont ____ (proclamer) l’ouverture du spectacle."
+      <input type="text" id="reponse29">
+          </p>
+      <button onclick="showCorrection(29, 'Test : Ils ont pris. Donc ont proclamé - participe passé.')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr29" style="display:none;">proclamé</div>
+      <div class="explication" id="exp29"></div>
+    </div>
+
+    <div class="exercice-block">
+      <p>15. Compléter : "Le récit va ____ (enchanter) les cœurs nostalgiques."
+      <input type="text" id="reponse30">
+          </p>
+      <button onclick="showCorrection(30, 'Test : Le récit va prendre. Donc va enchanter - infinitif.')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr30" style="display:none;">enchanter</div>
+      <div class="explication" id="exp30"></div>
+    </div>
+
 </div>
 
-<div class="exercice-block">
-  <p>3. Compléter : "Elle va ____ (rejouer) cette mélodie dans la chorale."
-  <input type="text" id="reponse18">
-      </p>
-  <button onclick="showCorrection(18, 'Test de remplacement : Elle va prendre.  Donc Elle va rejouer - au verbe infinitif.')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr18" style="display:none;">rejouer</div>
-  <div class="explication" id="exp18"></div>
-</div>
-
-<div class="exercice-block">
-  <p>4. Compléter : "Les musiciens ont ____ (accorder) leurs instruments."
-  <input type="text" id="reponse19">
-      </p>
-  <button onclick="showCorrection(19, 'Test de remplacement : Les musiciens ont pris. Donc ont accordé - au participe passé.')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr19" style="display:none;">accordé</div>
-  <div class="explication" id="exp19"></div>
-</div>
-
-<div class="exercice-block">
-  <p>5. Compléter : "Nous allons ____ (prolonger) le final pour impressionner le public."
-  <input type="text" id="reponse20">
-      </p>
-  <button onclick="showCorrection(20, 'Test de remplacement : Nous allons prendre. Donc allons prolonger - à l’infinitif.')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr20" style="display:none;">prolonger</div>
-  <div class="explication" id="exp20"></div>
-</div>
-
-<div class="exercice-block">
-  <p>6. Compléter : "Le chœur a ____ (débuter) la scène sur un rythme endiablé."
-  <input type="text" id="reponse21">
-      </p>
-  <button onclick="showCorrection(21, 'Test : Le chœur a pris. Donc a débuté - participe passé.')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr21" style="display:none;">débuté</div>
-  <div class="explication" id="exp21"></div>
-</div>
-
-<div class="exercice-block">
-  <p>7. Compléter : "Le public va ____ (crier) encore plus fort."
-  <input type="text" id="reponse22">
-      </p>
-  <button onclick="showCorrection(22, 'Test : Le public va prendre. Donc va crier - infinitif.')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr22" style="display:none;">crier</div>
-  <div class="explication" id="exp22"></div>
-</div>
-
-<div class="exercice-block">
-  <p>8. Compléter : "Ils ont ____ (réciter) un passage inspiré de Prévert."
-  <input type="text" id="reponse23">
-      </p>
-  <button onclick="showCorrection(23, 'Test : Ils ont pris. Donc ont récité - participe passé.')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr23" style="display:none;">récité</div>
-  <div class="explication" id="exp23"></div>
-</div>
-
-<div class="exercice-block">
-  <p>9. Compléter : "Le poème va ____ (envoûter) toute la salle."
-  <input type="text" id="reponse24">
-      </p>
-  <button onclick="showCorrection(24, 'Test : Le poème va prendre. Donc va envoûter - infinitif.')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr24" style="display:none;">envoûter</div>
-  <div class="explication" id="exp24"></div>
-</div>
-
-<div class="exercice-block">
-  <p>10. Compléter : "Nous avons ____ (répéter) la scène jusqu’à la perfection."
-  <input type="text" id="reponse25">
-      </p>
-  <button onclick="showCorrection(25, 'Test : Nous avons pris. Donc avons répété - participe passé.')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr25" style="display:none;">répété</div>
-  <div class="explication" id="exp25"></div>
-</div>
-
-<div class="exercice-block">
-  <p>11. Compléter : "Elles vont ____ (préparer) le décor avant l’entracte."
-  <input type="text" id="reponse26">
-      </p>
-  <button onclick="showCorrection(26, 'Test : Elles vont prendre. Donc vont préparer - infinitif.')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr26" style="display:none;">préparer</div>
-  <div class="explication" id="exp26"></div>
-</div>
-
-<div class="exercice-block">
-  <p>12. Compléter : "Le soliste a ____ (interpréter) ce morceau avec ferveur."
-  <input type="text" id="reponse27">
-      </p>
-  <button onclick="showCorrection(27, 'Test : Le soliste a pris. Donc a interprété - participe passé.')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr27" style="display:none;">interprété</div>
-  <div class="explication" id="exp27"></div>
-</div>
-
-<div class="exercice-block">
-  <p>13. Compléter : "Tu vas ____ (ajouter) une strophe inédite de Prévert."
-  <input type="text" id="reponse28">
-      </p>
-  <button onclick="showCorrection(28, 'Test : Tu vas prendre. Donc vas ajouter - infinitif.')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr28" style="display:none;">ajouter</div>
-  <div class="explication" id="exp28"></div>
-</div>
-
-<div class="exercice-block">
-  <p>14. Compléter : "Ils ont ____ (proclamer) l’ouverture du spectacle."
-  <input type="text" id="reponse29">
-      </p>
-  <button onclick="showCorrection(29, 'Test : Ils ont pris. Donc ont proclamé - participe passé.')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr29" style="display:none;">proclamé</div>
-  <div class="explication" id="exp29"></div>
-</div>
-
-<div class="exercice-block">
-  <p>15. Compléter : "Le récit va ____ (enchanter) les cœurs nostalgiques."
-  <input type="text" id="reponse30">
-      </p>
-  <button onclick="showCorrection(30, 'Test : Le récit va prendre. Donc va enchanter - infinitif.')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr30" style="display:none;">enchanter</div>
-  <div class="explication" id="exp30"></div>
-</div>
-
-</div>
-
-
-<!-- Exercices de Vocabulaire -->
+<!-- =========================
+     EXERCICES DE VOCABULAIRE
+     ========================= -->
 <div class="fiche">
     <h3>🧠 15 Exercices de Vocabulaire</h3>
 
-   <!-- EXERCICE 31 -->
-<div class="exercice-block">
-  <p>1. (Synonyme dans le poème)  
-     Trouve dans le poème un mot qui signifie « rouge vif ».  
-     Indice : commence par un « c… »
-     <input type="text" id="reponse31">
-  </p>
-  <button onclick="showCorrection(31, 'Réponse : « carminée » (rouge vif)')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr31" style="display:none;">carminée</div>
-  <div class="explication" id="exp31"></div>
+    <!-- EXERCICE 31 -->
+    <div class="exercice-block">
+      <p>1. (Synonyme dans le poème)  
+         Trouve dans le poème un mot qui signifie « rouge vif ».  
+         Indice : commence par un « c… »
+         <input type="text" id="reponse31">
+      </p>
+      <button onclick="showCorrection(31, 'Réponse : « carminée » (rouge vif)')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr31" style="display:none;">carminée</div>
+      <div class="explication" id="exp31"></div>
+    </div>
+
+    <!-- EXERCICE 32 -->
+    <div class="exercice-block">
+      <p>2. (Intrus)  
+         Parmi ces quatre adjectifs, un seul n’est pas synonyme d’« écarlate ».<br>
+         - carminée<br>
+         - vermillon<br>
+         - pâle<br>
+         - pourpre<br>
+         <input type="text" id="reponse32">
+      </p>
+      <button onclick="showCorrection(32, 'Intrus : « pâle »')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr32" style="display:none;">pâle</div>
+      <div class="explication" id="exp32"></div>
+    </div>
+
+    <!-- EXERCICE 33 -->
+    <div class="exercice-block">
+      <p>3. (Synonyme dans le poème)  
+         On trouve un mot pour dire « pas entendu ».  
+         Indice : commence par « in… »
+         <input type="text" id="reponse33">
+      </p>
+      <button onclick="showCorrection(33, 'Réponse : « inécoutée »')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr33" style="display:none;">inécoutée</div>
+      <div class="explication" id="exp33"></div>
+    </div>
+
+    <!-- EXERCICE 34 -->
+    <div class="exercice-block">
+      <p>4. (Intrus)  
+         Ces termes décrivent la musique dans le poème. Lequel est l’intrus ?<br>
+         - burinée<br>
+         - carminée<br>
+         - inécoutée<br>
+         - sucrée<br>
+         <input type="text" id="reponse34">
+      </p>
+      <button onclick="showCorrection(34, 'Intrus : « sucrée »')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr34" style="display:none;">sucrée</div>
+      <div class="explication" id="exp34"></div>
+    </div>
+
+    <!-- EXERCICE 35 -->
+    <div class="exercice-block">
+      <p>5. (Synonyme dans le poème)  
+         Retrouve dans le texte un mot qui veut dire « s’éloigner ».  
+         <input type="text" id="reponse35">
+      </p>
+      <button onclick="showCorrection(35, 'Réponse : « s’en va »')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr35" style="display:none;">s’en va</div>
+      <div class="explication" id="exp35"></div>
+    </div>
+
+    <!-- EXERCICE 36 -->
+    <div class="exercice-block">
+      <p>6. (Intrus)  
+         Dans le poème, on parle d’« ivrogne ». Parmi ces mots, lequel n’est pas un synonyme ?<br>
+         - soûlard<br>
+         - gourmet<br>
+         - pochard<br>
+         - éméché<br>
+         <input type="text" id="reponse36">
+      </p>
+      <button onclick="showCorrection(36, 'Intrus : « gourmet »')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr36" style="display:none;">gourmet</div>
+      <div class="explication" id="exp36"></div>
+    </div>
+
+    <!-- EXERCICE 37 -->
+    <div class="exercice-block">
+      <p>7. (Synonyme dans le poème)  
+         Trouve le mot qui veut dire « gravée », « ciselée ».  
+         Indice : il rime avec « carminée ».
+         <input type="text" id="reponse37">
+      </p>
+      <button onclick="showCorrection(37, 'Réponse : « burinée »')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr37" style="display:none;">burinée</div>
+      <div class="explication" id="exp37"></div>
+    </div>
+
+    <!-- EXERCICE 38 -->
+    <div class="exercice-block">
+      <p>8. (Intrus)  
+         Parmi ces mots liés à l’idée d’« arrêter » brusquement, un seul ne correspond pas :<br>
+         - stopper<br>
+         - interrompre<br>
+         - subsister<br>
+         - s’arrêter tout net<br>
+         <input type="text" id="reponse38">
+      </p>
+      <button onclick="showCorrection(38, 'Intrus : « subsister »')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr38" style="display:none;">subsister</div>
+      <div class="explication" id="exp38"></div>
+    </div>
+
+    <!-- EXERCICE 39 -->
+    <div class="exercice-block">
+      <p>9. (Synonyme dans le poème)  
+         On trouve un mot qui veut dire « contrariée, mise en échec ».  
+         Indice : commence par « dé… ».
+         <input type="text" id="reponse39">
+      </p>
+      <button onclick="showCorrection(39, 'Réponse : « déjouée »')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr39" style="display:none;">déjouée</div>
+      <div class="explication" id="exp39"></div>
+    </div>
+
+    <!-- EXERCICE 40 -->
+    <div class="exercice-block">
+      <p>10. (Intrus)  
+         Parmi ces verbes, lequel n’est pas un synonyme de « déjouer » ?<br>
+         - contrecarrer<br>
+         - contrarier<br>
+         - encourager<br>
+         - faire échouer<br>
+         <input type="text" id="reponse40">
+      </p>
+      <button onclick="showCorrection(40, 'Intrus : « encourager »')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr40" style="display:none;">encourager</div>
+      <div class="explication" id="exp40"></div>
+    </div>
+
+    <!-- EXERCICE 41 -->
+    <div class="exercice-block">
+      <p>11. (Synonyme dans le poème)  
+         Le poème décrit : « Ils ... de toutes leurs forces ». Trouve le verbe qui convient.  
+         <input type="text" id="reponse41">
+      </p>
+      <button onclick="showCorrection(41, 'Réponse : tapent')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr41" style="display:none;">tapent</div>
+      <div class="explication" id="exp41"></div>
+    </div>
+
+    <!-- EXERCICE 42 -->
+    <div class="exercice-block">
+      <p>12. (Intrus)  
+         Le poème compare la musique à la mer : « Sac / ressac ». Parmi ces mots, lequel n’appartient pas à la mer ?<br>
+         - ressac<br>
+         - vague<br>
+         - marée<br>
+         - orchestre<br>
+         <input type="text" id="reponse42">
+      </p>
+      <button onclick="showCorrection(42, 'Intrus : « orchestre »')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr42" style="display:none;">orchestre</div>
+      <div class="explication" id="exp42"></div>
+    </div>
+
+    <!-- EXERCICE 43 -->
+    <div class="exercice-block">
+      <p>13. (Synonyme dans le poème)  
+         Le poème désigne « ceux qui quittent un pays pour un autre ».  
+         Qui sont-ils?
+         <input type="text" id="reponse43">
+      </p>
+      <button onclick="showCorrection(43, 'Réponse : « émigrants »')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr43" style="display:none;">émigrants</div>
+      <div class="explication" id="exp43"></div>
+    </div>
+
+    <!-- EXERCICE 44 -->
+    <div class="exercice-block">
+      <p>14. (Intrus)  
+         Voici quatre mots évoquant la réligion. Un seul n’est pas un lieu de culte.<br>
+         - chapelle<br>
+         - temple<br>
+         - abbaye<br>
+         - taverne<br>
+         <input type="text" id="reponse44">
+      </p>
+      <button onclick="showCorrection(44, 'Intrus : « taverne »')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr44" style="display:none;">taverne</div>
+      <div class="explication" id="exp44"></div>
+    </div>
+
+    <!-- EXERCICE 45 -->
+    <div class="exercice-block">
+      <p>15. (Synonyme dans le poème)  
+         Prévert décrit la fin du spectacle. Quel mot symbolise la « fin » ?  
+         <input type="text" id="reponse45">
+      </p>
+      <button onclick="showCorrection(45, 'Réponse : « rideau »')">
+        Vérifier
+      </button>
+      <div class="correction" id="corr45" style="display:none;">rideau</div>
+      <div class="explication" id="exp45"></div>
+    </div>
 </div>
 
-<!-- EXERCICE 32 -->
-<div class="exercice-block">
-  <p>2. (Intrus)  
-     Parmi ces quatre adjectifs, un seul n’est pas synonyme d’« écarlate ».<br>
-     - carminée<br>
-     - vermillon<br>
-     - pâle<br>
-     - pourpre<br>
-     <input type="text" id="reponse32">
-  </p>
-  <button onclick="showCorrection(32, 'Intrus : « pâle »')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr32" style="display:none;">pâle</div>
-  <div class="explication" id="exp32"></div>
-</div>
-
-<!-- EXERCICE 33 -->
-<div class="exercice-block">
-  <p>3. (Synonyme dans le poème)  
-     On trouve un mot pour dire « pas entendu ».  
-     Indice : commence par « in… »
-     <input type="text" id="reponse33">
-  </p>
-  <button onclick="showCorrection(33, 'Réponse : « inécoutée »')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr33" style="display:none;">inécoutée</div>
-  <div class="explication" id="exp33"></div>
-</div>
-
-<!-- EXERCICE 34 -->
-<div class="exercice-block">
-  <p>4. (Intrus)  
-     Ces termes décrivent la musique dans le poème. Lequel est l’intrus ?<br>
-     - burinée<br>
-     - carminée<br>
-     - inécoutée<br>
-     - sucrée<br>
-     <input type="text" id="reponse34">
-  </p>
-  <button onclick="showCorrection(34, 'Intrus : « sucrée »')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr34" style="display:none;">sucrée</div>
-  <div class="explication" id="exp34"></div>
-</div>
-
-<!-- EXERCICE 35 -->
-<div class="exercice-block">
-  <p>5. (Synonyme dans le poème)  
-     Retrouve dans le texte un mot qui veut dire « s’éloigner ».  
-     <input type="text" id="reponse35">
-  </p>
-  <button onclick="showCorrection(35, 'Réponse : « s’en va »')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr35" style="display:none;">s’en va</div>
-  <div class="explication" id="exp35"></div>
-</div>
-
-<!-- EXERCICE 36 -->
-<div class="exercice-block">
-  <p>6. (Intrus)  
-     Dans le poème, on parle d’« ivrogne ». Parmi ces mots, lequel n’est pas un synonyme ?<br>
-     - soûlard<br>
-     - gourmet<br>
-     - pochard<br>
-     - éméché<br>
-     <input type="text" id="reponse36">
-  </p>
-  <button onclick="showCorrection(36, 'Intrus : « gourmet »')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr36" style="display:none;">gourmet</div>
-  <div class="explication" id="exp36"></div>
-</div>
-
-<!-- EXERCICE 37 -->
-<div class="exercice-block">
-  <p>7. (Synonyme dans le poème)  
-     Trouve le mot qui veut dire « gravée », « ciselée ».  
-     Indice : il rime avec « carminée ».
-     <input type="text" id="reponse37">
-  </p>
-  <button onclick="showCorrection(37, 'Réponse : « burinée »')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr37" style="display:none;">burinée</div>
-  <div class="explication" id="exp37"></div>
-</div>
-
-<!-- EXERCICE 38 -->
-<div class="exercice-block">
-  <p>8. (Intrus)  
-     Parmi ces mots liés à l’idée d’« arrêter » brusquement, un seul ne correspond pas :<br>
-     - stopper<br>
-     - interrompre<br>
-     - subsister<br>
-     - s’arrêter tout net<br>
-     <input type="text" id="reponse38">
-  </p>
-  <button onclick="showCorrection(38, 'Intrus : « subsister »')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr38" style="display:none;">subsister</div>
-  <div class="explication" id="exp38"></div>
-</div>
-
-<!-- EXERCICE 39 -->
-<div class="exercice-block">
-  <p>9. (Synonyme dans le poème)  
-     On trouve un mot qui veut dire « contrariée, mise en échec ».  
-     Indice : commence par « dé… ».
-     <input type="text" id="reponse39">
-  </p>
-  <button onclick="showCorrection(39, 'Réponse : « déjouée »')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr39" style="display:none;">déjouée</div>
-  <div class="explication" id="exp39"></div>
-</div>
-
-<!-- EXERCICE 40 -->
-<div class="exercice-block">
-  <p>10. (Intrus)  
-     Parmi ces verbes, lequel n’est pas un synonyme de « déjouer » ?<br>
-     - contrecarrer<br>
-     - contrarier<br>
-     - encourager<br>
-     - faire échouer<br>
-     <input type="text" id="reponse40">
-  </p>
-  <button onclick="showCorrection(40, 'Intrus : « encourager »')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr40" style="display:none;">encourager</div>
-  <div class="explication" id="exp40"></div>
-</div>
-
-<!-- EXERCICE 41 -->
-<div class="exercice-block">
-  <p>11. (Synonyme dans le poème)  
-     Le poème décrit : « Ils ... de toutes leurs forces ». Trouve le verbe qui convient.  
-     <input type="text" id="reponse41">
-  </p>
-  <button onclick="showCorrection(41, 'Réponse : tapent')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr41" style="display:none;">tapent</div>
-  <div class="explication" id="exp41"></div>
-</div>
-
-<!-- EXERCICE 42 -->
-<div class="exercice-block">
-  <p>12. (Intrus)  
-     Le poème compare la musique à la mer : « Sac / ressac ». Parmi ces mots, lequel n’appartient pas à la mer ?<br>
-     - ressac<br>
-     - vague<br>
-     - marée<br>
-     - orchestre<br>
-     <input type="text" id="reponse42">
-  </p>
-  <button onclick="showCorrection(42, 'Intrus : « orchestre »')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr42" style="display:none;">orchestre</div>
-  <div class="explication" id="exp42"></div>
-</div>
-
-<!-- EXERCICE 43 -->
-<div class="exercice-block">
-  <p>13. (Synonyme dans le poème)  
-     Le poème désigne « ceux qui quittent un pays pour un autre ».  
-     Qui sont-ils?
-     <input type="text" id="reponse43">
-  </p>
-  <button onclick="showCorrection(43, 'Réponse : « émigrants »')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr43" style="display:none;">émigrants</div>
-  <div class="explication" id="exp43"></div>
-</div>
-
-<!-- EXERCICE 44 -->
-<div class="exercice-block">
-  <p>14. (Intrus)  
-     Voici quatre mots évoquant la réligion. Un seul n’est pas un lieu de culte.<br>
-     - chapelle<br>
-     - temple<br>
-     - abbaye<br>
-     - taverne<br>
-     <input type="text" id="reponse44">
-  </p>
-  <button onclick="showCorrection(44, 'Intrus : « taverne »')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr44" style="display:none;">taverne</div>
-  <div class="explication" id="exp44"></div>
-</div>
-
-<!-- EXERCICE 45 -->
-<div class="exercice-block">
-  <p>15. (Synonyme dans le poème)  
-     Prévert décrit la fin du spectacle. Quel mot symbolise la « fin » ?  
-     <input type="text" id="reponse45">
-  </p>
-  <button onclick="showCorrection(45, 'Réponse : « rideau »')">
-    Vérifier
-  </button>
-  <div class="correction" id="corr45" style="display:none;">rideau</div>
-  <div class="explication" id="exp45"></div>
-</div>
-
-</div>
-
-<!-- Création de Chansons -->
+<!-- =========================
+     CREATION DE CHANSONS
+     ========================= -->
 <div class="fiche">
     <h3>🎤 Sujets de Composition Musicale</h3>
 
@@ -716,7 +703,7 @@ apprécier → apprécié</p>
             Errance nocturne, entre espoir et mémoire"
         </em>
         </p>
-                <!-- Envoi de message -->
+        <!-- Envoi de message -->
         <textarea id="texteEmail" placeholder="Écris ton rap ici..."></textarea>
         <button onclick="envoyerMessage()" style="margin-top: 10px;">Envoyer</button>
     </div>
@@ -732,7 +719,7 @@ apprécier → apprécié</p>
             Voyagent ensemble au rythme du soukous qui danse"
         </em>
         </p>
-          <!-- Envoi de message -->
+        <!-- Envoi de message -->
         <textarea id="texteEmail" placeholder="Compose ta rumba..."></textarea>
         <button onclick="envoyerMessage()" style="margin-top: 10px;">Envoyer</button>
     </div>
@@ -748,18 +735,33 @@ apprécier → apprécié</p>
             Le ressac de la ville nous porte en cadence"
         </em>
         </p>
-
         <!-- Envoi de message -->
         <textarea id="texteEmail" placeholder="Invente ta ndombolo..."></textarea>
-   
         <button onclick="envoyerMessage()" style="margin-top: 10px;">Envoyer</button>
     </div>
-
 </div>
 
+<!-- =========================
+     BOUTON VOIR SCORE
+     ========================= -->
+<button onclick="afficherScores()">Voir mes scores</button>
+
+<div style="margin-top: 20px;">
+    <p>Score Grammaire (1-15) : <span id="scoreGrammaire"></span></p>
+    <p>Score Orthographe (16-30) : <span id="scoreOrthographe"></span></p>
+    <p>Score Vocabulaire (31-45) : <span id="scoreVocabulaire"></span></p>
+    <p>Score total (1-45) : <span id="scoreTotal"></span></p>
+</div>
 
 <script>
-// Correction du code avec uniquement la fonction JavaScript
+// ----------------------------------------------------------
+// 1) Tableau global pour suivre l'état de chaque question
+// ----------------------------------------------------------
+let correctAnswers = new Array(45).fill(false);
+
+// ----------------------------------------------------------
+// 2) showCorrection : vérifie la réponse et stocke true/false
+// ----------------------------------------------------------
 function showCorrection(num, explication) {
     const input = document.getElementById('reponse' + num);
     const reponse = input.value.trim().toLowerCase();
@@ -768,43 +770,78 @@ function showCorrection(num, explication) {
 
     if (reponse === correction) {
         alert('✅ Correct !');
+        correctAnswers[num - 1] = true;  // Marque la question comme correcte
         if (expDiv) {
             expDiv.style.display = 'block';
             expDiv.textContent = explication;
         }
     } else {
+        correctAnswers[num - 1] = false; // Marque la question comme incorrecte
         document.getElementById('corr' + num).style.display = 'block';
         alert('❌ Incorrect. La bonne réponse est affichée.');
     }
 }
 
+// ----------------------------------------------------------
+// 3) calculerScore : calcule le nb de bonnes réponses [debut, fin]
+// ----------------------------------------------------------
+function calculerScore(debut, fin) {
+    let score = 0;
+    for (let i = debut - 1; i < fin; i++) {
+        if (correctAnswers[i]) {
+            score++;
+        }
+    }
+    return score;
+}
+
+// ----------------------------------------------------------
+// 4) afficherScores : affiche les scores dans les spans
+// ----------------------------------------------------------
+function afficherScores() {
+    const scoreGram = calculerScore(1, 15);
+    const scoreOrtho = calculerScore(16, 30);
+    const scoreVocab = calculerScore(31, 45);
+    const scoreTot = scoreGram + scoreOrtho + scoreVocab;
+
+    document.getElementById('scoreGrammaire').textContent = scoreGram + "/15";
+    document.getElementById('scoreOrthographe').textContent = scoreOrtho + "/15";
+    document.getElementById('scoreVocabulaire').textContent = scoreVocab + "/15";
+    document.getElementById('scoreTotal').textContent = scoreTot + "/45";
+}
+
+// ----------------------------------------------------------
+// 5) envoyerMessage : envoi par mail ou WhatsApp
+// ----------------------------------------------------------
 function envoyerMessage() {
     const texte = document.getElementById('texteEmail')?.value.trim();
-    const destinataire = document.getElementById('emailDestinataire')?.value.trim();
-    const sujet = document.getElementById('sujetEmail')?.value.trim();
-
+    // (Optionnel) vous pouvez ajouter d'autres champs (emailDestinataire, sujetEmail)
+    // ici, on récupère juste le texte
     if (!texte) {
         alert('Veuillez saisir un message.');
         return;
     }
 
     const choix = prompt('Envoyer via : 1 pour Email, 2 pour WhatsApp');
-
     if (choix === '1') {
+        // Demande l'adresse mail
+        const destinataire = prompt('Saisissez l’adresse email du destinataire :');
+        const sujet = prompt('Saisissez le sujet du mail :');
         if (!destinataire) {
             alert('Veuillez saisir une adresse email de destinataire.');
             return;
         }
-        // Ouvre la messagerie par défaut avec le texte
+        // Ouvre le mailto par défaut
         const mailto = `mailto:${encodeURIComponent(destinataire)}?subject=${encodeURIComponent(sujet||'')}&body=${encodeURIComponent(texte)}`;
         window.location.href = mailto;
     } else if (choix === '2') {
+        // Demande le numéro WhatsApp
         const phoneNumber = prompt('Saisissez le numéro WhatsApp (avec code pays, ex: 243xxxx) :');
         if (!phoneNumber) {
             alert('Numéro requis pour WhatsApp.');
             return;
         }
-        // Utilise https://wa.me pour tenter d'ouvrir l'app (ou le site) WhatsApp
+        // Ouvre WhatsApp
         const whatsappURL = `https://wa.me/${encodeURIComponent(phoneNumber)}?text=${encodeURIComponent(texte)}`;
         window.location.href = whatsappURL;
     } else {
