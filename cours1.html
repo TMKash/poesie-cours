@@ -152,7 +152,7 @@
        <textarea id="texteEmail" placeholder="Invente ta ndombolo..."></textarea>
     <input type="email" id="emailDestinataire" placeholder="Saisir l'adresse email" style="margin-top: 10px;">
     <input type="text" id="sujetEmail" placeholder="Sujet" style="margin-top: 10px;">
-    <button onclick="envoyerMail()" style="margin-top: 10px;">Envoyer</button>
+    <button onclick="envoyerMessage()" style="margin-top: 10px;">Envoyer</button>
 </div>
 
     </div>
@@ -174,19 +174,37 @@
                 alert('❌ Incorrect. La bonne réponse est affichée.');
             }
         }
-     function envoyerMail() {
-    const texte = document.getElementById('texteEmail').value;
-    const sujet = document.getElementById('sujetEmail').value;
-    const destinataire = document.getElementById('emailDestinataire').value;
+    function envoyerMessage() {
+    const texte = document.getElementById('texteEmail')?.value.trim();
+    const destinataire = document.getElementById('emailDestinataire')?.value.trim();
 
-    if (!destinataire) {
-        alert('Veuillez saisir une adresse email.');
+    if (!texte) {
+        alert('Veuillez saisir un message.');
         return;
     }
 
-    const mailto = `mailto:${encodeURIComponent(destinataire)}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(texte)}`;
-    window.location.href = mailto;
+    const choix = prompt('Envoyer via : 1 pour Email, 2 pour WhatsApp');
+
+    if (choix === '1') {
+        if (!destinataire) {
+            alert('Veuillez saisir une adresse email de destinataire.');
+            return;
+        }
+        const mailto = `mailto:${encodeURIComponent(destinataire)}?body=${encodeURIComponent(texte)}`;
+        window.location.href = mailto;
+    } else if (choix === '2') {
+        const phoneNumber = prompt('Saisissez le numéro WhatsApp (avec code pays) :');
+        if (!phoneNumber) {
+            alert('Numéro requis pour WhatsApp.');
+            return;
+        }
+        const whatsappURL = `whatsapp://send?phone=${encodeURIComponent(phoneNumber)}&text=${encodeURIComponent(texte)}`;
+        window.location.href = whatsappURL;
+    } else {
+        alert('Choix non valide.');
+    }
 }
+
     </script>
 
 </body>
