@@ -65,7 +65,7 @@
     <div class="exercice-block">
         <p>2. Choix du temps : "Hier, ils (chanter) <input type="text"> toute la nuit"</p>
          <button onclick="showCorrection(2, 'L'accord se fait avec l'auxiliaire avoir : ils ont (avoir) chanté toute la nuit.')">Vérifier</button>
-        <div class="correction" id="corr2" style="display:none;>ont chanté</div>
+        <div class="correction" id="corr2" style="display:none;">ont chanté</div>
              <div class="explication" id="exp2"></div>   
     </div>
 
@@ -79,19 +79,19 @@
     <div class="exercice-block">
         <p>1. Corriger : "Il a voyager sans cesse" → <input type="text"></p>
         <button onclick="showCorrection(16)">Vérifier</button>
-        <div class="correction" id="corr16" style="display:none;>voyagé (participe passé avec avoir)</div>
+        <div class="correction" id="corr16" style="display:none;">voyagé (participe passé avec avoir)</div>
     </div>
 
     <div class="exercice-block">
         <p>2. Compléter : "Les ____ (voix) du quartier résonnent" <input type="text"></p>
         <button onclick="showCorrection(17)">Vérifier</button>
-        <div class="correction" id="corr17" style="display:none;>voix (inchangeable)</div>
+        <div class="correction" id="corr17" style="display:none";>voix (inchangeable)</div>
     </div>
 
     <div class="exercice-block">
         <p>3. Complétez : "Il a ____ (chanter) toute la nuit" <input type="text"></p>
         <button onclick="showCorrection(18)">Correction</button>
-        <div class="correction" id="corr18" style="display:none;>chanté (participe passé avec avoir)</div>
+        <div class="correction" id="corr18" style="display:none";>chanté (participe passé avec avoir)</div>
     </div>
     <!-- Ajouter 13 autres exercices -->
 </div>
@@ -103,13 +103,13 @@
     <div class="exercice-block">
         <p>1. Trouver l'intrus : Errance - Dérive - Stabilité - Flânerie → <input type="text"></p>
         <button onclick="showCorrection(31)">Vérifier</button>
-        <div class="correction" id="corr31" style="display:none;>Stabilité</div>
+        <div class="correction" id="corr31" style="display:none";>Stabilité</div>
     </div>
 
     <div class="exercice-block">
         <p>2. Définir "ressac" : <input type="text"></p>
         <button onclick="showCorrection(32)">Vérifier</button>
-        <div class="correction" id="corr32" style="display:none;>Mouvement de va-et-vient des vagues</div>
+        <div class="correction" id="corr32" style="display:none";>Mouvement de va-et-vient des vagues</div>
     </div>
 
     <!-- Ajouter 13 autres exercices -->
@@ -149,7 +149,7 @@
         Exemple :<br>
         <em>"Hey chauffeur! Ohé l'ivrogne! <br>
         Le ressac de la ville nous porte en cadence"</em></p>
-        <textarea placeholder="Invente ta ndombolo..." rows="4"></textarea>
+       <textarea id="texteEmail" placeholder="Invente ta ndombolo..."></textarea>
     <input type="email" id="emailDestinataire" placeholder="Saisir l'adresse email" style="margin-top: 10px;">
     <input type="text" id="sujetEmail" placeholder="Sujet" style="margin-top: 10px;">
     <button onclick="envoyerMail()" style="margin-top: 10px;">Envoyer</button>
