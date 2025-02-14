@@ -114,7 +114,7 @@
         <p>2. Choix du temps : "Hier, ils (chanter)
            <input type="text" id="reponse2"> toute la nuit"
         </p>
-        <button onclick="showCorrection(2, 'L\'accord se fait avec l\'auxiliaire avoir : ils ont (avoir) chanté toute la nuit.')">
+        <button onclick="showCorrection(2, 'L\'accord se fait avec l\'auxiliaire avoir : ils ont chanté toute la nuit.')">
             Vérifier
         </button>
         <div class="correction" id="corr2" style="display:none;">ont chanté</div>
@@ -132,7 +132,7 @@
         <p>1. Compléter : "Il a ____ (voyager) sans cesse."
            <input type="text" id="reponse16">
         </p>
-       <button onclick="showCorrection(16, 'L\'accord se fait avec l\'auxiliaire avoir : il a (avoir) voyagé sans cesse.')">
+       <button onclick="showCorrection(16, 'L\'accord se fait avec l\'auxiliaire avoir : il a voyagé sans cesse.')">
             Vérifier
         </button>
         <div class="correction" id="corr16" style="display:none;">voyagé</div>
@@ -153,7 +153,7 @@
 <div class="exercice-block">
   <p>3. Compléter : "Elle va ____ (rejouer) cette mélodie dans la chorale."</p>
   <input type="text" id="reponse18">
-  <button onclick="showCorrection(18, 'Test de remplacement : \"Elle va prendre\" : \"Elle va rejouer\" au verbe infinitif.')">
+  <button onclick="showCorrection(18, 'Test de remplacement : Elle va prendre.  Donc Elle va rejouer - au verbe infinitif.')">
     Vérifier
   </button>
   <div class="correction" id="corr18" style="display:none;">rejouer</div>
@@ -163,7 +163,7 @@
 <div class="exercice-block">
   <p>4. Compléter : "Les musiciens ont ____ (accorder) leurs instruments."</p>
   <input type="text" id="reponse19">
-  <button onclick="showCorrection(19, 'Test de remplacement : \"Les musiciens ont pris\" donc \"ont accordé\" au participe passé.')">
+  <button onclick="showCorrection(19, 'Test de remplacement : Les musiciens ont pris. Donc ont accordé - au participe passé.')">
     Vérifier
   </button>
   <div class="correction" id="corr19" style="display:none;">accordé</div>
@@ -173,7 +173,7 @@
 <div class="exercice-block">
   <p>5. Compléter : "Nous allons ____ (prolonger) le final pour impressionner le public."</p>
   <input type="text" id="reponse20">
-  <button onclick="showCorrection(20, 'Test de remplacement : \"Nous allons prendre\" donc \"allons prolonger\" à l’infinitif.')">
+  <button onclick="showCorrection(20, 'Test de remplacement : Nous allons prendre. Donc allons prolonger - à l’infinitif.')">
     Vérifier
   </button>
   <div class="correction" id="corr20" style="display:none;">prolonger</div>
@@ -183,7 +183,7 @@
 <div class="exercice-block">
   <p>6. Compléter : "Le chœur a ____ (débuter) la scène sur un rythme endiablé."</p>
   <input type="text" id="reponse21">
-  <button onclick="showCorrection(21, 'Test : \"Le chœur a pris\" donc \"a débuté\" (participe passé).')">
+  <button onclick="showCorrection(21, 'Test : Le chœur a pris. Donc a débuté - participe passé.')">
     Vérifier
   </button>
   <div class="correction" id="corr21" style="display:none;">débuté</div>
@@ -193,7 +193,7 @@
 <div class="exercice-block">
   <p>7. Compléter : "Le public va ____ (crier) encore plus fort."</p>
   <input type="text" id="reponse22">
-  <button onclick="showCorrection(22, 'Test : \"Le public va prendre\" donc \"va crier\" (infinitif).')">
+  <button onclick="showCorrection(22, 'Test : Le public va prendre. Donc va crier - infinitif.')">
     Vérifier
   </button>
   <div class="correction" id="corr22" style="display:none;">crier</div>
@@ -203,7 +203,7 @@
 <div class="exercice-block">
   <p>8. Compléter : "Ils ont ____ (réciter) un passage inspiré de Prévert."</p>
   <input type="text" id="reponse23">
-  <button onclick="showCorrection(23, 'Test : \"Ils ont pris\" donc \"ont récité\" (participe passé).')">
+  <button onclick="showCorrection(23, 'Test : Ils ont pris. Donc ont récité - participe passé.')">
     Vérifier
   </button>
   <div class="correction" id="corr23" style="display:none;">récité</div>
@@ -362,30 +362,48 @@
 
 
 <script>
+<script>
 function showCorrection(num, explication) {
-    // Récupère la valeur de l'input correspondant
+    // Récupère l'input et la correction
     const input = document.getElementById('reponse' + num);
-    // S'il n'existe pas, on ne fait rien
-    if (!input) return;
-    
     const reponse = input.value.trim().toLowerCase();
     const corrElem = document.getElementById('corr' + num);
     const correction = corrElem.textContent.trim().toLowerCase();
+
+    // Div au-dessus de l'explication pour afficher Correct / Incorrect
+    const resultDiv = document.getElementById('result' + num);
+
+    // Explication affichée si correct
     const expDiv = document.getElementById('exp' + num);
 
+    // Réinitialise l'affichage
+    resultDiv.style.display = 'none';
+    resultDiv.textContent = '';
+    corrElem.style.display = 'none';
+    expDiv.style.display = 'none';
+
+    // Compare la réponse
     if (reponse === correction) {
-        alert('✅ Correct !');
-        if (expDiv) {
+        // Bonne réponse
+        resultDiv.style.display = 'block';
+        resultDiv.style.color = 'green';
+        resultDiv.textContent = '✅ Correct !';
+
+        // Afficher l'explication en dessous
+        if (explication) {
             expDiv.style.display = 'block';
             expDiv.textContent = explication;
         }
     } else {
-        // On affiche la correction seulement si l'élément existe
-        if (corrElem) corrElem.style.display = 'block';
-        alert('❌ Incorrect. La bonne réponse est affichée.');
+        // Mauvaise réponse
+        resultDiv.style.display = 'block';
+        resultDiv.style.color = 'red';
+        resultDiv.textContent = '❌ Incorrect.';
+
+        // Afficher la correction
+        corrElem.style.display = 'block';
     }
 }
-
 function envoyerMessage() {
     const texte = document.getElementById('texteEmail')?.value.trim();
     const destinataire = document.getElementById('emailDestinataire')?.value.trim();
