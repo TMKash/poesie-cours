@@ -375,47 +375,25 @@
 
 
 <script>
+// Correction du code avec uniquement la fonction JavaScript
 function showCorrection(num, explication) {
-    // Récupère l'input et la correction
     const input = document.getElementById('reponse' + num);
     const reponse = input.value.trim().toLowerCase();
-    const corrElem = document.getElementById('corr' + num);
-    const correction = corrElem.textContent.trim().toLowerCase();
-
-    // Div au-dessus de l'explication pour afficher Correct / Incorrect
-    const resultDiv = document.getElementById('result' + num);
-
-    // Explication affichée si correct
+    const correction = document.getElementById('corr' + num).textContent.trim().toLowerCase();
     const expDiv = document.getElementById('exp' + num);
 
-    // Réinitialise l'affichage
-    resultDiv.style.display = 'none';
-    resultDiv.textContent = '';
-    corrElem.style.display = 'none';
-    expDiv.style.display = 'none';
-
-    // Compare la réponse
     if (reponse === correction) {
-        // Bonne réponse
-        resultDiv.style.display = 'block';
-        resultDiv.style.color = 'green';
-        resultDiv.textContent = '✅ Correct !';
-
-        // Afficher l'explication en dessous
-        if (explication) {
+        alert('✅ Correct !');
+        if (expDiv) {
             expDiv.style.display = 'block';
             expDiv.textContent = explication;
         }
     } else {
-        // Mauvaise réponse
-        resultDiv.style.display = 'block';
-        resultDiv.style.color = 'red';
-        resultDiv.textContent = '❌ Incorrect.';
-
-        // Afficher la correction
-        corrElem.style.display = 'block';
+        document.getElementById('corr' + num).style.display = 'block';
+        alert('❌ Incorrect. La bonne réponse est affichée.');
     }
 }
+
 function envoyerMessage() {
     const texte = document.getElementById('texteEmail')?.value.trim();
     const destinataire = document.getElementById('emailDestinataire')?.value.trim();
