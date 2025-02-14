@@ -11,13 +11,16 @@
         input[type="text"], textarea { padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%; }
         button { background-color: #333; color: white; padding: 10px 20px; border: none; border-radius: 5px; transition: background 0.3s ease; }
         button:hover { background-color: #555; }
-        h2, h3 { color: #333; }    </style>
+        h2, h3 { color: #333; }   
+        .explication { margin-top: 10px; background-color: #d4edda; padding: 10px; border-left: 5px solid #155724; border-radius: 5px; display: none; }
+    </style>
 </head>
 <body>
 
 <div class="fiche">
     <!-- En-tête du cours -->
-    <h2>🎵 Cours 1 : Musique des Mots (Inspiré de Prévert)</h2>
+    <h2>🎵 Carmina Burana : Rythmes Urbains </h2>
+       <p>Avant de commencer, lis le poème de Jacques Prévert "Carmina Burana" </p>
     
     <!-- Section Règles -->
     <div class="highlight">
@@ -54,14 +57,15 @@
     <!-- Exercice 1 à 15 -->
     <div class="exercice-block">
         <p>1. Accorder : "La mélodie est (repartir) <input type="text"> avec le vent"</p>
-        <button onclick="showCorrection(1)">Vérifier</button>
+         <button onclick="showCorrection(1, 'L'accord se fait avec l'auxiliaire être : La mélodie (elle) est repartie.')">Vérifier</button>
         <div class="correction" id="corr1" style="display:none;">repartie</div>
+        <div class="explication" id="exp1"></div>    
     </div>
 
     <div class="exercice-block">
         <p>2. Choix du temps : "Hier, ils (chanter) <input type="text"> toute la nuit"</p>
-        <button onclick="showCorrection(2)">Vérifier</button>
-        <div class="correction" id="corr2">ont chanté</div>
+         <button onclick="showCorrection(2, 'L'accord se fait avec l'auxiliaire avoir : ils ont (avoir) chanté toute la nuit.')">Vérifier</button>
+        <div class="correction" id="corr2" style="display:none;>ont chanté</div>
     </div>
 
     <!-- Continuer jusqu'à l'exercice 15 avec le même format -->
@@ -74,19 +78,19 @@
     <div class="exercice-block">
         <p>1. Corriger : "Il a voyager sans cesse" → <input type="text"></p>
         <button onclick="showCorrection(16)">Vérifier</button>
-        <div class="correction" id="corr16">voyagé (participe passé avec avoir)</div>
+        <div class="correction" id="corr16" style="display:none;>voyagé (participe passé avec avoir)</div>
     </div>
 
     <div class="exercice-block">
         <p>2. Compléter : "Les ____ (voix) du quartier résonnent" <input type="text"></p>
         <button onclick="showCorrection(17)">Vérifier</button>
-        <div class="correction" id="corr17">voix (inchangeable)</div>
+        <div class="correction" id="corr17" style="display:none;>voix (inchangeable)</div>
     </div>
 
     <div class="exercice-block">
         <p>3. Complétez : "Il a ____ (chanter) toute la nuit" <input type="text"></p>
         <button onclick="showCorrection(18)">Correction</button>
-        <div class="correction" id="corr18">chanté (participe passé avec avoir)</div>
+        <div class="correction" id="corr18" style="display:none;>chanté (participe passé avec avoir)</div>
     </div>
     <!-- Ajouter 13 autres exercices -->
 </div>
@@ -98,13 +102,13 @@
     <div class="exercice-block">
         <p>1. Trouver l'intrus : Errance - Dérive - Stabilité - Flânerie → <input type="text"></p>
         <button onclick="showCorrection(31)">Vérifier</button>
-        <div class="correction" id="corr31">Stabilité</div>
+        <div class="correction" id="corr31" style="display:none;>Stabilité</div>
     </div>
 
     <div class="exercice-block">
         <p>2. Définir "ressac" : <input type="text"></p>
         <button onclick="showCorrection(32)">Vérifier</button>
-        <div class="correction" id="corr32">Mouvement de va-et-vient des vagues</div>
+        <div class="correction" id="corr32" style="display:none;>Mouvement de va-et-vient des vagues</div>
     </div>
 
     <!-- Ajouter 13 autres exercices -->
@@ -145,22 +149,43 @@
         <em>"Hey chauffeur! Ohé l'ivrogne! <br>
         Le ressac de la ville nous porte en cadence"</em></p>
         <textarea placeholder="Invente ta ndombolo..." rows="4"></textarea>
+    <input type="email" id="emailDestinataire" placeholder="Saisir l'adresse email" style="margin-top: 10px;">
+    <input type="text" id="sujetEmail" placeholder="Sujet" style="margin-top: 10px;">
+    <button onclick="envoyerMail()" style="margin-top: 10px;">Envoyer</button>
+</div>
+
     </div>
 </div>
 
  <script>
-        function showCorrection(num) {
+        function showCorrection(num, explication) {
             const input = document.getElementById('reponse' + num);
             const reponse = input.value.trim().toLowerCase();
             const correction = document.getElementById('corr' + num).textContent.trim().toLowerCase();
+            const expDiv = document.getElementById('exp' + num);
 
             if (reponse === correction) {
                 alert('✅ Correct !');
+                expDiv.style.display = 'block';
+                expDiv.textContent = explication;
             } else {
                 document.getElementById('corr' + num).style.display = 'block';
                 alert('❌ Incorrect. La bonne réponse est affichée.');
             }
         }
+     function envoyerMail() {
+    const texte = document.getElementById('texteEmail').value;
+    const sujet = document.getElementById('sujetEmail').value;
+    const destinataire = document.getElementById('emailDestinataire').value;
+
+    if (!destinataire) {
+        alert('Veuillez saisir une adresse email.');
+        return;
+    }
+
+    const mailto = `mailto:${encodeURIComponent(destinataire)}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(texte)}`;
+    window.location.href = mailto;
+}
     </script>
 
 </body>
