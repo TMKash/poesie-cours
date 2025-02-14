@@ -64,6 +64,7 @@
     <!-- En-tête du cours -->
     <h2>🎵 Carmina Burana : Rythmes Urbains - cours 1</h2>
     <p><strong>Avant de commencer, lis le poème de Jacques Prévert "Carmina Burana"</strong></p>
+    <p><strong>le meilleur arrive vers la fin</strong></p>
     
     <!-- Section Règles -->
     <div class="highlight">
@@ -96,32 +97,202 @@
 <!-- Exercices de Grammaire -->
 <div class="fiche">
     <h3>🔍 15 Exercices de Grammaire</h3>
-    
-    <!-- Exercice 1 -->
-    <div class="exercice-block">
-        <p>1. Accorder : "La mélodie est (repartir) 
-           <input type="text" id="reponse1"> avec le vent"
-        </p>
-        <button onclick="showCorrection(1, 'L\'accord se fait avec l\'auxiliaire être : La mélodie (elle) est repartie.')">
-            Vérifier
-        </button>
-        <div class="correction" id="corr1" style="display:none;">repartie</div>
-        <div class="explication" id="exp1"></div>    
-    </div>
+     <p><strong>Avant de commencer, un rappel : </strong></p>
+    <p>écrire → écrit <br>
+revenir → revenu <br>
+écouter → écouté <br>
+voler → volé <br>
+rester → resté <br>
+saisir → saisi <br>
+devenir → devenu <br>
+chanter → chanté <br>
+se mêler → mêlé <br>
+voir → vu <br>
+arriver → arrivé <br>
+applaudir → applaudi <br>
+s’ouvrir → ouvert <br>
+avoir → eu <br>
+apprécier → apprécié</p>   
+ <!-- Exercice 1 -->
+  <div class="exercice-block">
+    <p>1. "Jacques Prévert ____ (écrire) ce poème pour Carl Orff."
+      <input type="text" id="reponse1">
+    </p>
+    <button onclick="showCorrection(1, 'Avoir - pas d’accord.')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr1" style="display:none;">a écrit</div>
+    <div class="explication" id="exp1"></div>
+  </div>
 
-    <!-- Exercice 2 -->
-    <div class="exercice-block">
-        <p>2. Choix du temps : "Hier, ils (chanter)
-           <input type="text" id="reponse2"> toute la nuit"
-        </p>
-        <button onclick="showCorrection(2, 'L\'accord se fait avec l\'auxiliaire avoir : ils ont chanté toute la nuit.')">
-            Vérifier
-        </button>
-        <div class="correction" id="corr2" style="display:none;">ont chanté</div>
-        <div class="explication" id="exp2"></div>   
-    </div>
+  <!-- Exercice 2 -->
+  <div class="exercice-block">
+    <p>2. "Les musiciens ____ (revenir) sur scène pour jouer Carmina Burana."
+      <input type="text" id="reponse2">
+    </p>
+    <button onclick="showCorrection(2, 'Être - accord (pluriel).')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr2" style="display:none;">sont revenus</div>
+    <div class="explication" id="exp2"></div>
+  </div>
 
-    <!-- Continuer jusqu'à l'exercice 15 avec le même format -->
+  <!-- Exercice 3 -->
+  <div class="exercice-block">
+    <p>3. "Nous ____ (écouter) la musique qui voyage selon Prévert."
+      <input type="text" id="reponse3">
+    </p>
+    <button onclick="showCorrection(3, 'Avoir - pas d’accord.')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr3" style="display:none;">avons écouté</div>
+    <div class="explication" id="exp3"></div>
+  </div>
+
+  <!-- Exercice 4 -->
+  <div class="exercice-block">
+    <p>4. "Les feuilles du poème ____ (voler) au vent."
+      <input type="text" id="reponse4">
+    </p>
+    <button onclick="showCorrection(4, 'Avoir - pas d’accord.')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr4" style="display:none;">ont volé</div>
+    <div class="explication" id="exp4"></div>
+  </div>
+
+  <!-- Exercice 5 -->
+  <div class="exercice-block">
+    <p>5. "La musique ____ (rester) inécoutée pendant un instant."
+      <input type="text" id="reponse5">
+    </p>
+    <button onclick="showCorrection(5, 'Être - accord (féminin sg).')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr5" style="display:none;">est restée</div>
+    <div class="explication" id="exp5"></div>
+  </div>
+
+  <!-- Exercice 6 -->
+  <div class="exercice-block">
+    <p>6. "Vous ____ (saisir) l’instant où la musique part et revient."
+      <input type="text" id="reponse6">
+    </p>
+    <button onclick="showCorrection(6, 'Avoir - pas d’accord.')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr6" style="display:none;">avez saisi</div>
+    <div class="explication" id="exp6"></div>
+  </div>
+
+  <!-- Exercice 7 -->
+  <div class="exercice-block">
+    <p>7. "Elle ____ (devenir) célèbre grâce à ce poème."
+      <input type="text" id="reponse7">
+    </p>
+    <button onclick="showCorrection(7, 'Être - accord (féminin sg).')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr7" style="display:none;">est devenue</div>
+    <div class="explication" id="exp7"></div>
+  </div>
+
+  <!-- Exercice 8 -->
+  <div class="exercice-block">
+    <p>8. "Ils ____ (chanter) les couplets en latin turbulent."
+      <input type="text" id="reponse8">
+    </p>
+    <button onclick="showCorrection(8, 'Avoir - pas d’accord.')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr8" style="display:none;">ont chanté</div>
+    <div class="explication" id="exp8"></div>
+  </div>
+
+  <!-- Exercice 9 -->
+  <div class="exercice-block">
+    <p>9. "Les voix ____ (se mêler) aux violons."
+      <input type="text" id="reponse9">
+    </p>
+    <button onclick="showCorrection(9, 'Verbe pronominal + être - accord (féminin pl).')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr9" style="display:none;">se sont mêlées</div>
+    <div class="explication" id="exp9"></div>
+  </div>
+
+  <!-- Exercice 10 -->
+  <div class="exercice-block">
+    <p>10. "Les passants ____ (voir) les feuilles du poème arrachées par le vent."
+      <input type="text" id="reponse10">
+    </p>
+    <button onclick="showCorrection(10, 'Avoir - pas d’accord.')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr10" style="display:none;">ont vu</div>
+    <div class="explication" id="exp10"></div>
+  </div>
+
+  <!-- Exercice 11 -->
+  <div class="exercice-block">
+    <p>11. "Nous ____ (arriver) à l’abbaye de Benediktbeuren."
+      <input type="text" id="reponse11">
+    </p>
+    <button onclick="showCorrection(11, 'Être - accord (pl).')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr11" style="display:none;">sommes arrivés</div>
+    <div class="explication" id="exp11"></div>
+  </div>
+
+  <!-- Exercice 12 -->
+  <div class="exercice-block">
+    <p>12. "Vous ____ (applaudir) ce grand air de l’amour."
+      <input type="text" id="reponse12">
+    </p>
+    <button onclick="showCorrection(12, 'Avoir - pas d’accord.')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr12" style="display:none;">avez applaudi</div>
+    <div class="explication" id="exp12"></div>
+  </div>
+
+  <!-- Exercice 13 -->
+  <div class="exercice-block">
+    <p>13. "Les rideaux de l’opéra ____ (s’ouvrir) devant la foule."
+      <input type="text" id="reponse13">
+    </p>
+    <button onclick="showCorrection(13, 'Verbe pronominal + être - accord (masc. pl).')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr13" style="display:none;">se sont ouverts</div>
+    <div class="explication" id="exp13"></div>
+  </div>
+
+  <!-- Exercice 14 -->
+  <div class="exercice-block">
+    <p>14. "J’ ____ (avoir) l’impression de voyager au fil du temps."
+      <input type="text" id="reponse14">
+    </p>
+    <button onclick="showCorrection(14, 'Avoir - pas d’accord.')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr14" style="display:none;">ai eu</div>
+    <div class="explication" id="exp14"></div>
+  </div>
+
+  <!-- Exercice 15 -->
+  <div class="exercice-block">
+    <p>15. "Les spectateurs ____ (apprécier) la beauté de Carmina Burana."
+      <input type="text" id="reponse15">
+    </p>
+    <button onclick="showCorrection(15, 'Avoir - pas d’accord.')">
+      Vérifier
+    </button>
+    <div class="correction" id="corr15" style="display:none;">ont apprécié</div>
+    <div class="explication" id="exp15"></div>
+  </div>
+
 </div>
 
 <!-- Exercices d'Orthographe -->
