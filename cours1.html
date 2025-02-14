@@ -4,23 +4,66 @@
     <meta charset="UTF-8">
     <title>Cours 1 Carmina Burana : Rythmes Urbains</title>
     <style>
-        body { background-color: #f5f5f5; color: #333; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        .fiche { background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .highlight { background-color: #f0f0f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-        .exercice-block { background-color: #e7e7e7; padding: 20px; border-left: 5px solid #555; margin-bottom: 20px; }
-        input[type="text"], textarea { padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%; }
-        button { background-color: #333; color: white; padding: 10px 20px; border: none; border-radius: 5px; transition: background 0.3s ease; }
-        button:hover { background-color: #555; }
-        h2, h3 { color: #333; }   
-        .explication { margin-top: 10px; background-color: #d4edda; padding: 10px; border-left: 5px solid #155724; border-radius: 5px; display: none; }
+        body {
+            background-color: #f5f5f5; 
+            color: #333; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .fiche {
+            background-color: #ffffff; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .highlight {
+            background-color: #f0f0f0; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 20px;
+        }
+        .exercice-block {
+            background-color: #e7e7e7; 
+            padding: 20px; 
+            border-left: 5px solid #555; 
+            margin-bottom: 20px;
+        }
+        input[type="text"], textarea {
+            padding: 10px; 
+            margin-top: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            width: 100%;
+        }
+        button {
+            background-color: #333; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        h2, h3 {
+            color: #333;
+        }
+        .explication {
+            margin-top: 10px; 
+            background-color: #d4edda; 
+            padding: 10px; 
+            border-left: 5px solid #155724; 
+            border-radius: 5px; 
+            display: none;
+        }
     </style>
 </head>
 <body>
 
 <div class="fiche">
     <!-- En-tête du cours -->
-    <h2>🎵 Carmina Burana : Rythmes Urbains - cours 1 </h2>
-       <p><strong>Avant de commencer, lis le poème de Jacques Prévert "Carmina Burana"</strong></p>
+    <h2>🎵 Carmina Burana : Rythmes Urbains - cours 1</h2>
+    <p><strong>Avant de commencer, lis le poème de Jacques Prévert "Carmina Burana"</strong></p>
     
     <!-- Section Règles -->
     <div class="highlight">
@@ -54,19 +97,28 @@
 <div class="fiche">
     <h3>🔍 15 Exercices de Grammaire</h3>
     
-    <!-- Exercice 1 à 15 -->
+    <!-- Exercice 1 -->
     <div class="exercice-block">
-        <p>1. Accorder : "La mélodie est (repartir) <input type="text"> avec le vent"</p>
-         <button onclick="showCorrection(1, 'L'accord se fait avec l'auxiliaire être : La mélodie (elle) est repartie.')">Vérifier</button>
+        <p>1. Accorder : "La mélodie est (repartir) 
+           <input type="text" id="reponse1"> avec le vent"
+        </p>
+        <button onclick="showCorrection(1, 'L\'accord se fait avec l\'auxiliaire être : La mélodie (elle) est repartie.')">
+            Vérifier
+        </button>
         <div class="correction" id="corr1" style="display:none;">repartie</div>
         <div class="explication" id="exp1"></div>    
     </div>
 
+    <!-- Exercice 2 -->
     <div class="exercice-block">
-        <p>2. Choix du temps : "Hier, ils (chanter) <input type="text"> toute la nuit"</p>
-         <button onclick="showCorrection(2, 'L'accord se fait avec l'auxiliaire avoir : ils ont (avoir) chanté toute la nuit.')">Vérifier</button>
+        <p>2. Choix du temps : "Hier, ils (chanter)
+           <input type="text" id="reponse2"> toute la nuit"
+        </p>
+        <button onclick="showCorrection(2, 'L\'accord se fait avec l\'auxiliaire avoir : ils ont (avoir) chanté toute la nuit.')">
+            Vérifier
+        </button>
         <div class="correction" id="corr2" style="display:none;">ont chanté</div>
-             <div class="explication" id="exp2"></div>   
+        <div class="explication" id="exp2"></div>   
     </div>
 
     <!-- Continuer jusqu'à l'exercice 15 avec le même format -->
@@ -77,21 +129,30 @@
     <h3>✏️ 15 Exercices d'Orthographe</h3>
 
     <div class="exercice-block">
-        <p>1. Corriger : "Il a voyager sans cesse" → <input type="text"></p>
-        <button onclick="showCorrection(16)">Vérifier</button>
+        <p>1. Corriger : "Il a voyager sans cesse" → 
+           <input type="text" id="reponse16">
+        </p>
+        <button onclick="showCorrection(16, '')">Vérifier</button>
         <div class="correction" id="corr16" style="display:none;">voyagé (participe passé avec avoir)</div>
+        <div class="explication" id="exp16"></div>
     </div>
 
     <div class="exercice-block">
-        <p>2. Compléter : "Les ____ (voix) du quartier résonnent" <input type="text"></p>
-        <button onclick="showCorrection(17)">Vérifier</button>
-        <div class="correction" id="corr17" style="display:none";>voix (inchangeable)</div>
+        <p>2. Compléter : "Les ____ (voix) du quartier résonnent"
+           <input type="text" id="reponse17">
+        </p>
+        <button onclick="showCorrection(17, '')">Vérifier</button>
+        <div class="correction" id="corr17" style="display:none;">voix (inchangeable)</div>
+        <div class="explication" id="exp17"></div>
     </div>
 
     <div class="exercice-block">
-        <p>3. Complétez : "Il a ____ (chanter) toute la nuit" <input type="text"></p>
-        <button onclick="showCorrection(18)">Correction</button>
-        <div class="correction" id="corr18" style="display:none";>chanté (participe passé avec avoir)</div>
+        <p>3. Complétez : "Il a ____ (chanter) toute la nuit" 
+           <input type="text" id="reponse18">
+        </p>
+        <button onclick="showCorrection(18, '')">Correction</button>
+        <div class="correction" id="corr18" style="display:none;">chanté (participe passé avec avoir)</div>
+        <div class="explication" id="exp18"></div>
     </div>
     <!-- Ajouter 13 autres exercices -->
 </div>
@@ -101,15 +162,21 @@
     <h3>🧠 15 Exercices de Vocabulaire</h3>
 
     <div class="exercice-block">
-        <p>1. Trouver l'intrus : Errance - Dérive - Stabilité - Flânerie → <input type="text"></p>
-        <button onclick="showCorrection(31)">Vérifier</button>
-        <div class="correction" id="corr31" style="display:none";>Stabilité</div>
+        <p>1. Trouver l'intrus : Errance - Dérive - Stabilité - Flânerie → 
+           <input type="text" id="reponse31">
+        </p>
+        <button onclick="showCorrection(31, '')">Vérifier</button>
+        <div class="correction" id="corr31" style="display:none;">Stabilité</div>
+        <div class="explication" id="exp31"></div>
     </div>
 
     <div class="exercice-block">
-        <p>2. Définir "ressac" : <input type="text"></p>
-        <button onclick="showCorrection(32)">Vérifier</button>
-        <div class="correction" id="corr32" style="display:none";>Mouvement de va-et-vient des vagues</div>
+        <p>2. Définir "ressac" : 
+           <input type="text" id="reponse32">
+        </p>
+        <button onclick="showCorrection(32, '')">Vérifier</button>
+        <div class="correction" id="corr32" style="display:none;">Mouvement de va-et-vient des vagues</div>
+        <div class="explication" id="exp32"></div>
     </div>
 
     <!-- Ajouter 13 autres exercices -->
@@ -125,8 +192,11 @@
         Mots-clés (de Prévert) : errance - vacarme - buriné - aube<br>
         Structure : 2 couplets de 4 vers + refrain<br>
         Exemple :<br>
-        <em>"Dans le vacarme des ngandas, je burine mon histoire<br>
-        Errance nocturne, entre espoir et mémoire"</em></p>
+        <em>
+            "Dans le vacarme des ngandas, je burine mon histoire<br>
+            Errance nocturne, entre espoir et mémoire"
+        </em>
+        </p>
         <textarea placeholder="Écris ton rap ici..." rows="4"></textarea>
     </div>
 
@@ -136,8 +206,11 @@
         Mots-clés : sourdine - baguette - voyage - rire<br>
         Structure : Refrain répétitif + pont musical<br>
         Exemple :<br>
-        <em>"Sur la baguette du destin, nos cœurs en sourdine<br>
-        Voyagent ensemble au rythme du soukous qui danse"</em></p>
+        <em>
+            "Sur la baguette du destin, nos cœurs en sourdine<br>
+            Voyagent ensemble au rythme du soukous qui danse"
+        </em>
+        </p>
         <textarea placeholder="Compose ta rumba..." rows="4"></textarea>
     </div>
 
@@ -147,36 +220,51 @@
         Mots-clés : ressac - larrons - ivrogne - liberté<br>
         Structure : Appel-réponse + rythme binaire<br>
         Exemple :<br>
-        <em>"Hey chauffeur! Ohé l'ivrogne! <br>
-        Le ressac de la ville nous porte en cadence"</em></p>
-       <textarea id="texteEmail" placeholder="Invente ta ndombolo..."></textarea>
-    <input type="email" id="emailDestinataire" placeholder="Saisir l'adresse email" style="margin-top: 10px;">
-    <input type="text" id="sujetEmail" placeholder="Sujet" style="margin-top: 10px;">
-    <button onclick="envoyerMessage()" style="margin-top: 10px;">Envoyer</button>
-</div>
+        <em>
+            "Hey chauffeur! Ohé l'ivrogne! <br>
+            Le ressac de la ville nous porte en cadence"
+        </em>
+        </p>
 
+        <!-- Envoi de message -->
+        <textarea id="texteEmail" placeholder="Invente ta ndombolo..."></textarea>
+        <input type="email" id="emailDestinataire" placeholder="Saisir l'adresse email" style="margin-top: 10px;">
+        <input type="text" id="sujetEmail" placeholder="Sujet" style="margin-top: 10px;">
+        <button onclick="envoyerMessage()" style="margin-top: 10px;">Envoyer</button>
     </div>
+
 </div>
 
- <script>
-        function showCorrection(num, explication) {
-            const input = document.getElementById('reponse' + num);
-            const reponse = input.value.trim().toLowerCase();
-            const correction = document.getElementById('corr' + num).textContent.trim().toLowerCase();
-            const expDiv = document.getElementById('exp' + num);
 
-            if (reponse === correction) {
-                alert('✅ Correct !');
-                expDiv.style.display = 'block';
-                expDiv.textContent = explication;
-            } else {
-                document.getElementById('corr' + num).style.display = 'block';
-                alert('❌ Incorrect. La bonne réponse est affichée.');
-            }
+<script>
+function showCorrection(num, explication) {
+    // Récupère la valeur de l'input correspondant
+    const input = document.getElementById('reponse' + num);
+    // S'il n'existe pas, on ne fait rien
+    if (!input) return;
+    
+    const reponse = input.value.trim().toLowerCase();
+    const corrElem = document.getElementById('corr' + num);
+    const correction = corrElem.textContent.trim().toLowerCase();
+    const expDiv = document.getElementById('exp' + num);
+
+    if (reponse === correction) {
+        alert('✅ Correct !');
+        if (expDiv) {
+            expDiv.style.display = 'block';
+            expDiv.textContent = explication;
         }
-    function envoyerMessage() {
+    } else {
+        // On affiche la correction seulement si l'élément existe
+        if (corrElem) corrElem.style.display = 'block';
+        alert('❌ Incorrect. La bonne réponse est affichée.');
+    }
+}
+
+function envoyerMessage() {
     const texte = document.getElementById('texteEmail')?.value.trim();
     const destinataire = document.getElementById('emailDestinataire')?.value.trim();
+    const sujet = document.getElementById('sujetEmail')?.value.trim();
 
     if (!texte) {
         alert('Veuillez saisir un message.');
@@ -190,22 +278,23 @@
             alert('Veuillez saisir une adresse email de destinataire.');
             return;
         }
-        const mailto = `mailto:${encodeURIComponent(destinataire)}?body=${encodeURIComponent(texte)}`;
+        // Ouvre la messagerie par défaut avec le texte
+        const mailto = `mailto:${encodeURIComponent(destinataire)}?subject=${encodeURIComponent(sujet||'')}&body=${encodeURIComponent(texte)}`;
         window.location.href = mailto;
     } else if (choix === '2') {
-        const phoneNumber = prompt('Saisissez le numéro WhatsApp (avec code pays) :');
+        const phoneNumber = prompt('Saisissez le numéro WhatsApp (avec code pays, ex: 243xxxx) :');
         if (!phoneNumber) {
             alert('Numéro requis pour WhatsApp.');
             return;
         }
-        const whatsappURL = `whatsapp://send?phone=${encodeURIComponent(phoneNumber)}&text=${encodeURIComponent(texte)}`;
+        // Utilise https://wa.me pour tenter d'ouvrir l'app (ou le site) WhatsApp
+        const whatsappURL = `https://wa.me/${encodeURIComponent(phoneNumber)}?text=${encodeURIComponent(texte)}`;
         window.location.href = whatsappURL;
     } else {
         alert('Choix non valide.');
     }
 }
-
-    </script>
+</script>
 
 </body>
 </html>
